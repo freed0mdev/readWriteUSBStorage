@@ -10,7 +10,7 @@ exports.getDevices = function(options, callback) {
         callback(devices);
       },
       function(msg) {  // errorCallback
-        callback(devices);
+        callback(msg);
 //        callbackWithError('Get devices failed: ' + msg, callback);
       },
       'readWriteUSBStorage',
