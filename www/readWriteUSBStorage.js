@@ -73,8 +73,7 @@ exports.claimInterface = function(handle, interfaceNumber, callback) {
   if (typeof interfaceNumber != "number") {
     // List interfaces returns an object, the caller must extract the number
     // from it.
-    return /*callbackWithError('interfaceNumber must be a number, not: '*/
-        JSON.stringify(interfaceNumber));
+    return JSON.stringify(interfaceNumber));
   }
   cordova.exec(
       callback, // successCallback
@@ -135,8 +134,7 @@ exports.bulkTransfer = function(handle, transferInfo, callback) {
   if (typeof transferInfo.endpoint != "number") {
     // List interfaces returns endpoints an object, the caller must extract the
     // number from it.
-    return /*callbackWithError('endpoint must be a number, not: ' +*/
-        JSON.stringify(transferInfo.endpoint));
+    return JSON.stringify(transferInfo.endpoint));
   }
 
   var params = {
@@ -165,8 +163,7 @@ exports.interruptTransfer = function(handle, transferInfo, callback) {
   if (typeof transferInfo.endpoint != "number") {
     // List interfaces returns endpoints an object, the caller must extract the
     // number from it.
-    return /*callbackWithError('endpoint must be a number, not: ' +*/
-        JSON.stringify(transferInfo.endpoint));
+    return JSON.stringify(transferInfo.endpoint));
   }
 
   var params = {
