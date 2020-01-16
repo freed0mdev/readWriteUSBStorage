@@ -204,3 +204,9 @@ exports.cordova = {
       [{}]);
   }
 };
+
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    alert('22');
+    console.log(cordova.file);
+}
