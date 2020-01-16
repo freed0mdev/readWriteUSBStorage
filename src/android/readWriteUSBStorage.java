@@ -44,8 +44,6 @@ import android.util.Log;
  * This class echoes a string called from JavaScript.
  */
 public class readWriteUSBStorage extends CordovaPlugin {
-    private UsbManager mUsbManager;
-
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("coolMethod")) {
@@ -351,13 +349,7 @@ public class readWriteUSBStorage extends CordovaPlugin {
                                             } catch (JSONException e) {
                                                 e.printStackTrace();
                                             }
-                                            if (null != ChromeUsb.this.openCallbackContext) {
-                                                ChromeUsb.this.openCallbackContext.success(jsonHandle);
-                                                ChromeUsb.this.openCallbackContext = null;
-                                            } else {
-                                                // at least fire to someone...
-                                                callbackContext.success(jsonHandle);
-                                            }
+                                            callbackContext.success(jsonHandle);
                                         }
                                     } else {
                                         Log.d(TAG, "permission denied for device " + device);
