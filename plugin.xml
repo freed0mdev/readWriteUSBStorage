@@ -4,7 +4,7 @@
     xmlns="http://apache.org/cordova/ns/plugins/1.0">
     <name>readWriteUSBStorage</name>
     <js-module name="readWriteUSBStorage" src="www/readWriteUSBStorage.js">
-        <clobbers target="cordova.plugins.readWriteUSBStorage" />
+        <clobbers target="readWriteUSBStorage" />
     </js-module>
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
