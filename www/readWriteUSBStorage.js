@@ -34,7 +34,7 @@ exports.openDevice = function(device, callback) {
 };
 
 exports.closeDevice = function(handle, opt_callback) {
-  var callback = opt_callback || function() {}
+  var callback = opt_callback || function() {};
   cordova.exec(
       callback,  // successCallback
       function(msg) {  // errorCallback
@@ -67,7 +67,7 @@ exports.claimInterface = function(handle, interfaceNumber, callback) {
   if (typeof interfaceNumber != "number") {
     // List interfaces returns an object, the caller must extract the number
     // from it.
-    return JSON.stringify(interfaceNumber));
+    return JSON.stringify(interfaceNumber);
   }
   cordova.exec(
       callback, // successCallback
@@ -128,7 +128,7 @@ exports.bulkTransfer = function(handle, transferInfo, callback) {
   if (typeof transferInfo.endpoint != "number") {
     // List interfaces returns endpoints an object, the caller must extract the
     // number from it.
-    return JSON.stringify(transferInfo.endpoint));
+    return JSON.stringify(transferInfo.endpoint);
   }
 
   var params = {
@@ -157,7 +157,7 @@ exports.interruptTransfer = function(handle, transferInfo, callback) {
   if (typeof transferInfo.endpoint != "number") {
     // List interfaces returns endpoints an object, the caller must extract the
     // number from it.
-    return JSON.stringify(transferInfo.endpoint));
+    return JSON.stringify(transferInfo.endpoint);
   }
 
   var params = {
