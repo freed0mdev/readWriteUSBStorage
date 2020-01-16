@@ -1,4 +1,4 @@
-package cordova-plugin-read-write-usb-storage;
+package cordova.plugin.read-write-usb-storage;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
