@@ -289,9 +289,7 @@ public class readWriteUSBStorage extends CordovaPlugin {
                         device.getProductId());
             }
         }
-        if (params.optBoolean("appendFakeDevice", false)) {
-            addDeviceToArray(result, FakeDevice.ID, FakeDevice.VID, FakeDevice.PID);
-        }
+        addDeviceToArray(result, FakeDevice.ID, FakeDevice.VID, FakeDevice.PID);
         callbackContext.success(result);
     }
     private static void addDeviceToArray(JSONArray result, int deviceId, int vendorId,
