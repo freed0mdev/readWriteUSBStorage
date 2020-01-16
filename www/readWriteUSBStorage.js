@@ -1,10 +1,4 @@
 var exec = require('cordova/exec');
-var platformId = require('cordova/platform').id;
-//var callbackWithError = require('cordova-plugin-chrome-apps-common.errors').callbackWithError;
-var base64 = require('cordova/base64')
-try {
-      var runtime = require('cordova-plugin-chrome-apps-runtime');
-} catch(e) {}
 
 exports.coolMethod = function (arg0, success, error) {
     exec(success, error, 'readWriteUSBStorage', 'coolMethod', [arg0]);
@@ -56,7 +50,7 @@ exports.listInterfaces = function(handle, callback) {
   cordova.exec(
       function(interfaceDescriptors) {
         interfaceDescriptors.forEach(function (interfaceDescriptor) {
-            interfaceDescriptor.extra_data = base64.toArrayBuffer(interfaceDescriptor.extra_data);
+//            interfaceDescriptor.extra_data = base64.toArrayBuffer(interfaceDescriptor.extra_data);
         });
         callback(interfaceDescriptors);
       },  // successCallback
