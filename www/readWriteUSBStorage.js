@@ -10,9 +10,10 @@ exports.getDevices = function(options, callback) {
         callback(devices);
       },
       function(msg) {  // errorCallback
+        callback(devices);
 //        callbackWithError('Get devices failed: ' + msg, callback);
       },
-      'ChromeUsb',
+      'readWriteUSBStorage',
       'getDevices',
       [options]
       );
@@ -27,7 +28,7 @@ exports.openDevice = function(device, callback) {
       function(msg) {  // errorCallback
 //        callbackWithError('Open device failed: ' + msg, callback);
       },
-      'ChromeUsb',
+      'readWriteUSBStorage',
       'openDevice',
       [device]
       );
@@ -40,7 +41,7 @@ exports.closeDevice = function(handle, opt_callback) {
       function(msg) {  // errorCallback
 //        callbackWithError('Close failed: ' + msg, callback);
       },
-      'ChromeUsb',
+      'readWriteUSBStorage',
       'closeDevice',
       [{handle:handle.handle}]
       );
@@ -57,7 +58,7 @@ exports.listInterfaces = function(handle, callback) {
       function(msg) {  // errorCallback
 //        callbackWithError('List interfaces failed: ' + msg, callback, []);
       },
-      'ChromeUsb',
+      'readWriteUSBStorage',
       'listInterfaces',
       [{handle:handle.handle}]
       );
@@ -74,7 +75,7 @@ exports.claimInterface = function(handle, interfaceNumber, callback) {
       function(msg) {  // errorCallback
 //        callbackWithError('Claim failed: ' + msg, callback);
       },
-      'ChromeUsb',
+      'readWriteUSBStorage',
       'claimInterface',
       [{ handle: handle.handle,
          interfaceNumber: interfaceNumber}]
@@ -88,7 +89,7 @@ exports.releaseInterface = function(handle, interfaceNumber, callback) {
       function(msg) {  // errorCallback
 //        callbackWithError('Release interface failed: ' + msg, callback);
       },
-      'ChromeUsb',
+      'readWriteUSBStorage',
       'releaseInterface',
       [{handle:handle.handle,
         interfaceNumber:interfaceNumber}]
@@ -116,7 +117,7 @@ exports.controlTransfer = function(handle, transferInfo, callback) {
       function(msg) {  // errorCallback
 //        callbackWithError('Control transfer failed: ' + msg, callback, {resultCode: 1});
       },
-      'ChromeUsb',
+      'readWriteUSBStorage',
       'controlTransfer',
       [params, transferInfo['data']]
       );
@@ -146,7 +147,7 @@ exports.bulkTransfer = function(handle, transferInfo, callback) {
       function(msg) {  // errorCallback
 //        callbackWithError('Bulk transfer failed: ' + msg, callback, {resultCode: 1});
       },
-      'ChromeUsb',
+      'readWriteUSBStorage',
       'bulkTransfer',
       [params, transferInfo['data']]
       );
@@ -175,7 +176,7 @@ exports.interruptTransfer = function(handle, transferInfo, callback) {
       function(msg) {  // errorCallback
 //        callbackWithError('Interrupt transfer failed: ' + msg, callback, {resultCode: 1});
       },
-      'ChromeUsb',
+      'readWriteUSBStorage',
       'interruptTransfer',
       [params, transferInfo['data']]
       );
@@ -198,7 +199,7 @@ exports.cordova = {
       function(error) {
         callback(false);
       },
-      'ChromeUsb',
+      'readWriteUSBStorage',
       'hasUsbHostFeature',
       [{}]);
   }
