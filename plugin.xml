@@ -10,7 +10,7 @@
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="readWriteUSBStorage">
                 <param name="android-package"
-                    value="cordova-plugin-read-write-usb-storage.readWriteUSBStorage" />
+                    value="cordova.plugin.read.write.usb.storage.readWriteUSBStorage" />
             </feature>
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml"></config-file>
